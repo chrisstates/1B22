@@ -5,6 +5,8 @@ unsigned short MS_Byte, LS_Byte;
 signed short tempC;
 
  void readIntTemp () {
+
+ FVRCON = 0b11000010 ;
  TSEN_bit=1;
  TSRNG_bit=1;
 
@@ -21,12 +23,13 @@ signed short tempC;
  ADCON0.CHS3 = 1;
  ADCON0.CHS4 = 1;
  ADCON0.ADON = 1;
- ADC_Init();
+
  ADCON0.F1 = 1;
  while (ADCON0.F1);
  MS_Byte = ADRESH;
  LS_Byte = ADRESL;
  temp = MS_Byte*256 + LS_Byte;
+ tempC = (2*temp - 400)/19.5-4;
  Delay_ms(200);
 
  TSEN_bit=0;
@@ -35,21 +38,14 @@ signed short tempC;
 
 void main() {
  OSCCON = 0b01111011 ;
-
  ANSELA = 0;
  CM1CON0 = 0x00;
 
  RXDTSEL_bit = 1;
  TXCKSEL_bit = 1;
 
-
  UART1_Init(9600);
  Delay_ms(100);
-
-
- FVRCON = 0b11000010 ;
-
-
 
  while (1) {
  if (UART1_Data_Ready()) {
@@ -60,6 +56,7 @@ void main() {
  UART1_Write(MS_Byte);
  Delay_ms(50);
  UART1_Write(LS_Byte);
+ UART1_Write(tempC);
  UART1_Write(13);
  Delay_ms(500);
  }
