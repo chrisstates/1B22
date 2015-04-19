@@ -1,41 +1,10 @@
-#line 1 "D:/_projects/PicProjects/12f1822/ADCSer/UART.c"
+#line 1 "D:/_projects/git-repos/1B22/UART.c"
 unsigned long temp;
 char uart_rd,tempF;
 unsigned short MS_Byte, LS_Byte;
 signed short tempC;
 
-
-
-void main() {
- OSCCON = 0b01111011 ;
-
- ANSELA = 0;
- CM1CON0 = 0x00;
-
- RXDTSEL_bit = 1;
- TXCKSEL_bit = 1;
-
-
- UART1_Init(9600);
- Delay_ms(100);
-
-
- FVRCON = 0b11000010 ;
-
-
- while (1) {
- if (UART1_Data_Ready()) {
- uart_rd = UART1_Read();
- UART1_Write(uart_rd);
- }
- UART1_Write(MS_Byte);
- Delay_ms(50);
- UART1_Write(LS_Byte);
- UART1_Write(13);
- Delay_ms(500);
- }
-}
-void readIntTemp () {
+ void readIntTemp () {
  TSEN_bit=1;
  TSRNG_bit=1;
 
@@ -62,4 +31,36 @@ void readIntTemp () {
 
  TSEN_bit=0;
  ADCON0.ADON = 0;
+ }
+
+void main() {
+ OSCCON = 0b01111011 ;
+
+ ANSELA = 0;
+ CM1CON0 = 0x00;
+
+ RXDTSEL_bit = 1;
+ TXCKSEL_bit = 1;
+
+
+ UART1_Init(9600);
+ Delay_ms(100);
+
+
+ FVRCON = 0b11000010 ;
+
+
+
+ while (1) {
+ if (UART1_Data_Ready()) {
+ uart_rd = UART1_Read();
+ UART1_Write(uart_rd);
+ }
+ readIntTemp();
+ UART1_Write(MS_Byte);
+ Delay_ms(50);
+ UART1_Write(LS_Byte);
+ UART1_Write(13);
+ Delay_ms(500);
+ }
 }

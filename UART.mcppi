@@ -33,11 +33,12 @@ Count=0
 [OTHER_FILES]
 Count=0
 [SEARCH_PATH]
-Count=4
+Count=5
 Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
 Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16_Enh\
-Path2=D:\_projects\PicProjects\12f1822\ADCSer\
-Path3=C:\Users\Desktop1\Desktop\UART\
+Path2=D:\_projects\git-repos\1B22\
+Path3=D:\_projects\PicProjects\12f1822\ADCSer\
+Path4=C:\Users\Desktop1\Desktop\UART\
 [HEADER_PATH]
 Count=1
 Path0=C:\Program Files\Mikroelektronika\mikroC PRO for PIC\Uses\P18\
