@@ -43,3 +43,8 @@
 *.mcl
 *.txt
 *.dic
+*.bmk
+*.brk
+*.cfg
+*.dct
+

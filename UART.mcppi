@@ -68,5 +68,4 @@ File15=Mmc_FAT16
 File16=Mmc_Fat16_Config
 [EXPANDED NODES]
 Node1=Sources
-Node2=Output Files
-Count=2
+Count=1
