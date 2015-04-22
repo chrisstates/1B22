@@ -32,3 +32,19 @@
 
 # Debug files
 *.dSYM/
+
+#config&temp files
+*.ini
+*.cp
+*.dbg
+*.dlt
+*.log
+*.lst
+*.mcl
+*.txt
+*.dic
+*.bmk
+*.brk
+*.cfg
+*.dct
+
