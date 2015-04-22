@@ -1,3 +1,4 @@
+#include "i2c.h"
 unsigned long temp;
 char uart_rd, uart_rd1,tempF;
 unsigned short MS_Byte, LS_Byte, MS_old, LS_old, avg_MS, avg_LS;
@@ -57,6 +58,11 @@ void main() {
   ADC_Init();                        // init adc with default settings
   TRISA2_bit=0;                      //*
   RA2_bit=1;                         //* heartbeat init
+   // i2c init
+  SDOSEL_bit =0;     // i2c init bits --- RA0 and RA1
+  SSSEL_bit =0;      //
+
+  
   tempOffset=  EEPROM_Read(0x00);    // temperature offset is in EEPROM at 0x00
   if (tempOffset==0xFF)  {
      EEPROM_Write(0x00,0xFD);        //init temp offset
