@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\P12F1822.c
+Value=UART.c
 [USE_EEPROM]
 Value=0
 [EEPROM_DEFINITION]
@@ -26,7 +26,7 @@ ActiveImageIndex=-1
 [OPENED_FILES]
 Count=2
 File0=UART.c
-File1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\P12F1822.c
+File1=..\..\..\..\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\P12F1822.c
 [EEPROM]
 Count=0
 [ACTIVE_COMMENTS_FILES]
@@ -34,12 +34,13 @@ Count=0
 [OTHER_FILES]
 Count=0
 [SEARCH_PATH]
-Count=5
+Count=6
 Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
 Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16_Enh\
-Path2=D:\_projects\git-repos\1B22\
-Path3=D:\_projects\PicProjects\12f1822\ADCSer\
-Path4=C:\Users\Desktop1\Desktop\UART\
+Path2=C:\Users\ERGO\Documents\GitHub\1B22\
+Path3=D:\_projects\git-repos\1B22\
+Path4=D:\_projects\PicProjects\12f1822\ADCSer\
+Path5=C:\Users\Desktop1\Desktop\UART\
 [HEADER_PATH]
 Count=1
 Path0=C:\Program Files\Mikroelektronika\mikroC PRO for PIC\Uses\P18\
@@ -48,24 +49,14 @@ Count=0
 [PLDS]
 Count=0
 [Useses]
-Count=17
-File0=Lcd
-File1=Lcd_Constants
-File2=ADC
-File3=Spi
-File4=C_String
-File5=C_Type
-File6=Conversions
-File7=C_Math
-File8=C_Stdlib
-File9=USB
-File10=EEPROM
-File11=Keypad4x4
-File12=Software_UART
-File13=UART
-File14=Mmc
-File15=Mmc_FAT16
-File16=Mmc_Fat16_Config
+Count=7
+File0=ADC
+File1=USB
+File2=Keypad4x4
+File3=UART
+File4=Mmc
+File5=Mmc_FAT16
+File6=Mmc_Fat16_Config
 [EXPANDED NODES]
 Node1=Sources
 Count=1
